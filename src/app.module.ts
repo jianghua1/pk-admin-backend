@@ -11,6 +11,7 @@ import { UserModule } from './user/user.module';
 import { MailModule } from './common/mail/mail.module';
 import * as dotenv from 'dotenv';
 import { toBoolean } from './utils/format';
+import { AuthModule } from './auth/auth.module';
 
 const conditionalImports = () => {
   const imports = [];
@@ -40,6 +41,7 @@ const conditionalImports = () => {
     DatabaseModule,
     UserModule,
     ...conditionalImports(),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [],
